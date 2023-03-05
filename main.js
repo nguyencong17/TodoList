@@ -216,10 +216,10 @@ function initFilterStatus(params) {
 
 function isMatchSearch(todoElement, searchTerm) {
   if(!todoElement) return;
-  if(searchTerm === '') return true; 
-  const titleElement = todoElement.querySelector('.title');
-
-  return titleElement.textContent.toLowerCase().includes(searchTerm.toLowerCase());
+  if(searchTerm.length >= 0) {
+    const titleElement = todoElement.querySelector('.title');
+    return titleElement.textContent.toLowerCase().includes(searchTerm.toLowerCase());
+  }
 }
 
 function isMatchStatus(todoElement, filterStatus) {
