@@ -27,8 +27,8 @@ const createElementLi = (todo, params) => {
     // update content
     title.textContent = todo.todo;
 
-    // Check isShow or notShow
-    liCloneElement.hidden = !isMatch(liCloneElement, params);
+    // // Check isShow or notShow
+    // liCloneElement.hidden = !isMatch(liCloneElement, params);
 
     // Attack Elent (Events)
     const btnStatus = liCloneElement.querySelector('.btn-status');
@@ -216,6 +216,7 @@ function initFilterStatus(params) {
 
 function isMatchSearch(todoElement, searchTerm) {
   if(!todoElement) return;
+  if(searchTerm === '') return true; 
   const titleElement = todoElement.querySelector('.title');
 
   return titleElement.textContent.toLowerCase().includes(searchTerm.toLowerCase());
